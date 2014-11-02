@@ -1,5 +1,6 @@
 var util = require('util'),
     twitter = require('twitter');
+
 var twit = new twitter({
     consumer_key: 'X8Grq1lxceBJ1bo4d12rAeXXV',
     consumer_secret: 'vIuBbTentRtUmJ5k9iyknKTBrSa5N65KON3LvSiA07yPTxPmVt',
@@ -9,5 +10,12 @@ var twit = new twitter({
 
 
 twit.search('nodejs OR #node', function(data) {
-    console.log(util.inspect(data));
+    // console.log('data =>', util.inspect(data));
 });
+
+// twit.trends('lat=40.21777&amp;long=-74.759361', function(data) {
+//     console.log('data =>', util.inspect(data));
+// });
+
+
+// lat=37.781157&amp;long=-122.400612831116
