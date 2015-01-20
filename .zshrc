@@ -22,16 +22,21 @@ alias v="open -a MacVim.app"
 
 alias sub="open -a /Applications/Sublime\ Text\ 2.app"
 
+alias at="open -a /Applications/Atom.app"
+
 alias v="open -a /Applications/MacVim.app"
 
 
 
 alias g='git'
+alias gu='gulp'
 
 alias cu='cap deploy:upload'   #  cu FILES='app/views/rooms/room-home.jade'  
 alias st='git status'
+alias ss='svn status'
+
 alias ch='cherry-pick'
-alias st='git status'
+
 alias s='git status -uno'
 alias gl='git pull'
 alias gp='git push'
@@ -50,18 +55,31 @@ alias cob='git checkout -b'
 alias gcot='git checkout -t'
 alias gcotb='git checkout --track -b'
 alias lo='git log --graph --all --decorate'
-alias gph2='git log --pretty=format:"%h %s" --graph'
 alias gph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gph2='git log --pretty=format:"%h %s" --graph'
 alias ni='npm install'
 alias n='node'
 alias np='npm'
 alias no='nodemon'
 alias l='ls'
 alias ll='l'
+alias i='install'
+
+alias gh='git reset --hard'
+
+
+alias connect='ssh -i ~/Dropbox/_errors/_rushnwash/trends-o.pem.txt ubuntu@54.68.225.51'
+
 
 alias py='python -m SimpleHTTPServer'
+alias kpy='kill %1'
+
+alias hs='http-server -p'  
+
+alias cpd='cap production deploy'
 
 
+alias gw='gulp watch'
 
 
 
@@ -155,4 +173,13 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 export GOPATH=$HOME/go
+
+##NETGEAR changes
+
+export SVN_SSH="ssh -i /Users/jay/.ssh/jay.prateek.key"
+
+alias cpd='cap production deploy'
+
+alias connect-marketing='ssh -l jprateek -i ~/Desktop/jprateek2.pem vznotify1.netgear.com'
+
 
