@@ -18,9 +18,14 @@ alias of="open -a firefox"
 
 alias oc="open -a /Applications/Google\ Chrome.app"
 
+alias ocns="oc  --args --disable-web-security"
+
+
 alias v="open -a MacVim.app"
 
 alias sub="open -a /Applications/Sublime\ Text\ 2.app"
+
+alias brackets="open -a /Applications/Brackets.app"
 
 alias at="open -a /Applications/Atom.app"
 
@@ -41,7 +46,7 @@ alias s='git status -uno'
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff | mate'
-alias a='git add'
+alias a='git add -A'
 alias au='git add -u'
 alias gau='git add --update'
 alias c='git commit -v'
@@ -68,7 +73,7 @@ alias i='install'
 alias gh='git reset --hard'
 
 
-alias connect='ssh -i ~/Dropbox/_errors/_rushnwash/trends-o.pem.txt ubuntu@54.68.225.51'
+
 
 
 alias py='python -m SimpleHTTPServer'
@@ -176,10 +181,61 @@ export GOPATH=$HOME/go
 
 ##NETGEAR changes
 
-export SVN_SSH="ssh -i /Users/jay/.ssh/jay.prateek.key"
+alias connect='ssh -i ~/Dropbox/Rypher/rypherkey.pem ubuntu@52.0.38.101'
+
+
+
 
 alias cpd='cap production deploy'
 
 alias connect-marketing='ssh -l jprateek -i ~/Desktop/jprateek2.pem vznotify1.netgear.com'
+
+alias connect-m='ssh -l jprateek -i ~/Desktop/jprateek2.pem arlobat-dev.netgear.com'
+
+alias connect-qa='ssh -l jprateek -i ~/Dropbox/NetGear-dbox/Code-Netgear-db/MARKETING/MARKETING_CODE/Keys/jay.prateek.key arlobat-qa.netgear.com'
+
+
+alias connect-dev='ssh -l jprateek -i ~/Desktop/jprateek.pem arlobat-dev.netgear.com'
+
+alias dev1='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb01-dev-int.netgear.com'
+
+alias dev2='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb02-dev-int.netgear.com'
+
+
+
+export PATH=${PATH}:$HOME/adt-bundle/sdk/platform-tools:/Development/adt-bundle/sdk/tools
+
+export SVN_SSH='ssh -i /Users/jay/.ssh/jay.prateek.key'
+
+
+##export SVN_SSH='ssh -i /home/user/.ssh/jay.prateek.key'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
