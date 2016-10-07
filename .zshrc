@@ -7,6 +7,18 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
+
+
+
+#NETGEAR
+
+alias ios="cd ~/Desktop/delete-iosCode/trunk"
+
+
+
+
+
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -17,15 +29,17 @@ alias os="open -a safari"
 alias of="open -a firefox"
 
 alias oc="open -a /Applications/Google\ Chrome.app"
+alias occ="open -a /Applications/Google\ Chrome\ Canary.app" 
 
 alias ocns="oc  --args --disable-web-security"
 
+alias occns="occ  --args --disable-web-security"
 
 alias v="open -a MacVim.app"
 
-alias sub="open -a /Applications/Sublime\ Text\ 2.app"
+alias sub="open -a /Applications/Sublime\ Text.app"
 
-alias brackets="open -a /Applications/Brackets.app"
+alias bra="open -a /Applications/Brackets.app"
 
 alias at="open -a /Applications/Atom.app"
 
@@ -45,8 +59,9 @@ alias ch='cherry-pick'
 alias s='git status -uno'
 alias gl='git pull'
 alias gp='git push'
+alias gpa='git push --all origin'
 alias gd='git diff | mate'
-alias a='git add -A'
+alias a='git add --all'
 alias au='git add -u'
 alias gau='git add --update'
 alias c='git commit -v'
@@ -75,7 +90,7 @@ alias gh='git reset --hard'
 
 
 
-
+ 
 alias py='python -m SimpleHTTPServer'
 alias kpy='kill %1'
 
@@ -188,7 +203,7 @@ alias connect='ssh -i ~/Dropbox/Rypher/rypherkey.pem ubuntu@52.0.38.101'
 
 alias cpd='cap production deploy'
 
-alias connect-marketing='ssh -l jprateek -i ~/Desktop/jprateek2.pem vznotify1.netgear.com'
+alias mark='ssh -l jprateek -i ~/Desktop/jprateek2.pem vznotify1.netgear.com'
 
 alias connect-m='ssh -l jprateek -i ~/Desktop/jprateek2.pem arlobat-dev.netgear.com'
 
@@ -201,6 +216,15 @@ alias dev1='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb01-dev-int.netgear.co
 
 alias dev2='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb02-dev-int.netgear.com'
 
+
+
+alias qa1='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb01-qa-int.netgear.com'
+
+alias qa2='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb02-qa-int.netgear.com'
+
+
+
+alias wind='ssh -l jprateek -i ~/Desktop/jprateek.pem windmill.netgear.com'
 
 
 export PATH=${PATH}:$HOME/adt-bundle/sdk/platform-tools:/Development/adt-bundle/sdk/tools
