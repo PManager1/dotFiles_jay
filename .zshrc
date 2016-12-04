@@ -1,4 +1,3 @@
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -13,17 +12,18 @@ ZSH_THEME="robbyrussell"
 
 #NETGEAR
 
-alias ios="cd ~/Desktop/delete-iosCode/trunk"
-
-
-
-
 
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias cap="cap production deploy"
+
+alias d="docker"
+alias c="-compose"
+
+alias ssh="ssh ubuntu@52.4.15.69"
 
 alias os="open -a safari"
 
@@ -50,6 +50,8 @@ alias v="open -a /Applications/MacVim.app"
 
 alias g='git'
 alias gu='gulp'
+
+alias ga='git commit --amend'
 
 alias cu='cap deploy:upload'   #  cu FILES='app/views/rooms/room-home.jade'  
 alias st='git status'
@@ -100,7 +102,11 @@ alias hs='http-server -p'
 alias cpd='cap production deploy'
 
 
-alias gw='gulp watch'
+alias gu='sudo gulp'
+
+
+
+alias ec2='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"ltg5.pem" ubuntu@ec2-34-192-106-66.compute-1.amazonaws.com'
 
 
 
@@ -195,33 +201,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export GOPATH=$HOME/go
 
-##NETGEAR changes
-
-alias connect='ssh -i ~/Dropbox/Rypher/rypherkey.pem ubuntu@52.0.38.101'
-
-
-
 
 alias cpd='cap production deploy'
-
-alias mark='ssh -l jprateek -i ~/Desktop/jprateek2.pem vznotify1.netgear.com'
-
-alias connect-m='ssh -l jprateek -i ~/Desktop/jprateek2.pem arlobat-dev.netgear.com'
-
-alias connect-qa='ssh -l jprateek -i ~/Dropbox/NetGear-dbox/Code-Netgear-db/MARKETING/MARKETING_CODE/Keys/jay.prateek.key arlobat-qa.netgear.com'
-
-
-alias connect-dev='ssh -l jprateek -i ~/Desktop/jprateek.pem arlobat-dev.netgear.com'
-
-alias dev1='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb01-dev-int.netgear.com'
-
-alias dev2='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb02-dev-int.netgear.com'
-
-
-
-alias qa1='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb01-qa-int.netgear.com'
-
-alias qa2='ssh -l jprateek -i ~/Desktop/jprateek.pem vzweb02-qa-int.netgear.com'
 
 
 
@@ -234,7 +215,6 @@ export SVN_SSH='ssh -i /Users/jay/.ssh/jay.prateek.key'
 
 
 ##export SVN_SSH='ssh -i /home/user/.ssh/jay.prateek.key'
-
 
 
 
