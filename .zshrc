@@ -20,10 +20,26 @@ ZSH_THEME="robbyrussell"
 
 alias cap="cap production deploy"
 
-alias d="docker"
-alias c="-compose"
 
-alias ssh="ssh ubuntu@52.4.15.69"
+alias ni="sudo npm install"
+
+alias p1="sudo gulp prod"
+alias p2="sudo ionic serve --port 80"
+
+alias d1="sudo gulp prod"
+alias d2="sudo ionic serve --port 80"
+alias d3="sudo mongod"
+
+
+alias iu="ionic upload"
+alias is="ionic serve"
+
+
+alias ac="git add . && c -m' - '"
+
+alias acp="git add . && c -m' - ' && gpa"
+
+# alias ssh="ssh ubuntu@52.4.15.69"
 
 alias os="open -a safari"
 
@@ -40,6 +56,11 @@ alias v="open -a MacVim.app"
 
 alias sub="open -a /Applications/Sublime\ Text.app"
 
+
+
+alias vs="open -a /Applications/Visual\ Studio\ Code.app"
+
+
 alias bra="open -a /Applications/Brackets.app"
 
 alias at="open -a /Applications/Atom.app"
@@ -51,7 +72,7 @@ alias v="open -a /Applications/MacVim.app"
 alias g='git'
 alias gu='gulp'
 
-alias ga='git commit --amend'
+alias gam='git commit --amend'
 
 alias cu='cap deploy:upload'   #  cu FILES='app/views/rooms/room-home.jade'  
 alias st='git status'
@@ -80,8 +101,6 @@ alias gcotb='git checkout --track -b'
 alias lo='git log --graph --all --decorate'
 alias gph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gph2='git log --pretty=format:"%h %s" --graph'
-alias ni='npm install'
-alias n='node'
 alias np='npm'
 alias no='nodemon'
 alias l='ls'
@@ -106,7 +125,10 @@ alias gu='sudo gulp'
 
 
 
-alias ec2='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"ltg5.pem" ubuntu@ec2-34-192-106-66.compute-1.amazonaws.com'
+alias ec='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"ltg7.pem" ubuntu@ec2-34-193-168-63.compute-1.amazonaws.com'
+
+
+alias ecm='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"ltg5.pem" ubuntu@ec2-54-157-254-96.compute-1.amazonaws.com'
 
 
 
@@ -194,8 +216,6 @@ function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 
 
-
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
@@ -206,15 +226,6 @@ alias cpd='cap production deploy'
 
 
 
-alias wind='ssh -l jprateek -i ~/Desktop/jprateek.pem windmill.netgear.com'
-
-
-export PATH=${PATH}:$HOME/adt-bundle/sdk/platform-tools:/Development/adt-bundle/sdk/tools
-
-export SVN_SSH='ssh -i /Users/jay/.ssh/jay.prateek.key'
-
-
-##export SVN_SSH='ssh -i /home/user/.ssh/jay.prateek.key'
 
 
 
