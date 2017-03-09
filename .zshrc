@@ -7,12 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-
-
-
 #NETGEAR
-
-
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -20,6 +15,8 @@ ZSH_THEME="robbyrussell"
 
 alias cap="cap production deploy"
 
+alias dr="git push origin --delete"
+alias dl="git branch -D"
 
 alias ni="sudo npm install"
 
@@ -30,16 +27,14 @@ alias d1="sudo gulp prod"
 alias d2="sudo ionic serve --port 80"
 alias d3="sudo mongod"
 
-
 alias iu="ionic upload"
 alias is="ionic serve"
-
 
 alias ac="git add . && c -m' - '"
 
 alias acp="git add . && c -m' - ' && gpa"
 
-# alias ssh="ssh ubuntu@52.4.15.69"
+alias ud="ssh jp@192.168.82.152"
 
 alias os="open -a safari"
 
@@ -56,18 +51,13 @@ alias v="open -a MacVim.app"
 
 alias sub="open -a /Applications/Sublime\ Text.app"
 
-
-
 alias vs="open -a /Applications/Visual\ Studio\ Code.app"
-
 
 alias bra="open -a /Applications/Brackets.app"
 
 alias at="open -a /Applications/Atom.app"
 
 alias v="open -a /Applications/MacVim.app"
-
-
 
 alias g='git'
 alias gu='gulp'
@@ -84,6 +74,7 @@ alias s='git status -uno'
 alias gl='git pull'
 alias gp='git push'
 alias gpa='git push --all origin'
+alias gpd='git push -u origin dev-2'
 alias gd='git diff | mate'
 alias a='git add --all'
 alias au='git add -u'
@@ -110,7 +101,28 @@ alias i='install'
 alias gh='git reset --hard'
 
 
+alias ladd='mongoimport --db mean-dev --collection properties --jsonArray --file '
+alias ladd-d='mongoimport --db mean-dev --collection properties --drop --jsonArray --file '
 
+
+
+alias ladda='mongoimport --db mean-dev --collection articles --jsonArray --file' 
+alias ladd-da='mongoimport --db mean-dev --collection articles --drop --jsonArray --file '
+
+
+
+alias sadda='mongoimport --db mean --collection articles --jsonArray --file' 
+alias sadd-da='mongoimport --db mean --collection articles --drop --jsonArray --file '
+
+
+
+# alias lrem='db.properties.remove({})'
+
+alias sadd='mongoimport --db mean --collection properties --jsonArray --file '
+alias sadd-d='mongoimport --db mean --collection properties --drop --jsonArray --file '
+
+alias lex='mongoexport --jsonArray --db mean-dev --collection properties  --out '
+alias sex='mongoexport --jsonArray --db mean --collection properties  --out '
 
  
 alias py='python -m SimpleHTTPServer'
@@ -120,17 +132,13 @@ alias hs='http-server -p'
 
 alias cpd='cap production deploy'
 
-
 alias gu='sudo gulp'
-
-
 
 alias ec='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"ltg7.pem" ubuntu@ec2-34-193-168-63.compute-1.amazonaws.com'
 
+alias ecw='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"website.pem" ubuntu@ec2-34-195-117-28.compute-1.amazonaws.com'
 
 alias ecm='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"ltg5.pem" ubuntu@ec2-54-157-254-96.compute-1.amazonaws.com'
-
-
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -167,8 +175,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
-
-
 
 #theme #theme #theme #theme  #theme #theme #theme #theme  
 
@@ -210,48 +216,12 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-
-
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
-
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
+function rm () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 export GOPATH=$HOME/go
 
-
 alias cpd='cap production deploy'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
