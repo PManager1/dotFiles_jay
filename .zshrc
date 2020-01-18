@@ -132,7 +132,7 @@ alias ya='sudo yarn add'
 
 alias gu='gulp'
 
-alias am='git commit --amend --no-verify'
+alias cm='git commit --amend --no-verify'
 
 alias gmv='git commit --amend'
 
@@ -180,8 +180,8 @@ alias gh='git reset --hard'
 
 
 din() {
-	local d='docker exec -it'
-	local b="docker exec -it $1 /bin/bash"
+    local d='docker exec -it'
+    local b="docker exec -it $1 /bin/bash"
     eval $b
 }
 
@@ -357,5 +357,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 export PATH="$HOME/.fastlane/bin:$PATH"
-
 
