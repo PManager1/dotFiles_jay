@@ -1,0 +1,6 @@
+open permissions to all files and fodlers :
+
+https://stackoverflow.com/questions/3740152/how-do-i-change-permissions-for-a-folder-and-all-of-its-subfolders-and-files-in
+chmod -R 755
+
+
