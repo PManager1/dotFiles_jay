@@ -132,7 +132,7 @@ alias ya='sudo yarn add'
 
 alias gu='gulp'
 
-alias gm='git commit --amend --no-verify'
+alias am='git commit --amend --no-verify'
 
 alias gmv='git commit --amend'
 
