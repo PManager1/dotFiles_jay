@@ -115,7 +115,7 @@ alias occns="occ  --args --disable-web-security"
 
 alias v="open -a MacVim.app"
 
-alias sub="open -a /Applications/Sublime\ Text2.app"
+alias sub="open -a /Applications/Sublime\ Text\ 2.app"
 
 alias vs="open -a /Applications/Visual\ Studio\ Code.app"
 
@@ -132,7 +132,7 @@ alias ya='sudo yarn add'
 
 alias gu='gulp'
 
-alias cm='git commit --amend --no-verify'
+alias am='git commit --amend --no-verify'
 
 alias gmv='git commit --amend'
 
@@ -180,8 +180,8 @@ alias gh='git reset --hard'
 
 
 din() {
-    local d='docker exec -it'
-    local b="docker exec -it $1 /bin/bash"
+	local d='docker exec -it'
+	local b="docker exec -it $1 /bin/bash"
     eval $b
 }
 
@@ -357,4 +357,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 export PATH="$HOME/.fastlane/bin:$PATH"
+
 
