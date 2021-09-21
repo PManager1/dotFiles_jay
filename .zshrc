@@ -40,28 +40,10 @@ alias allow="sudo chmod a+rwx"
 
 alias jc= "sudo chown -R jay $(pwd)"
 
-alias crni="react-native init"
-alias rn="react-native"
-alias rni="react-native run-ios"
-alias rni7="react-native run-ios --simulator="iPhone 7""
-alias rna="react-native run-android"
 
 alias rmf="sudo rm -rf"
 
 alias eds="find . -type f -name '*.DS_Store' -ls -delete"
-
-
-alias cap="cap production deploy"
-
-
-alias iu="ionic upload"
-alias is="ionic serve"
-
-alias igp="ionic generate page"
-
-alias me="meteor"
-
-
 
 
 alias acm='git add -A && git commit -m'
@@ -86,21 +68,11 @@ alias dl="git branch -D"
 
 alias ni="sudo npm install"
 
-alias p1="sudo gulp prod"
-alias p2="sudo ionic serve --port 80"
-
-alias d1="sudo gulp prod"
-alias d2="sudo ionic serve --port 80"
-alias d3="sudo mongod"
 
 alias br="sudo git branch -a"
 
-alias brd="sudo git push origin --delete"
-
 
 alias acp="git add . && c -m' - ' && gpa"
-
-alias ud="ssh jp@192.168.82.152"
 
 alias os="open -a safari"
 
@@ -123,7 +95,6 @@ alias bra="open -a /Applications/Brackets.app"
 
 alias at="open -a /Applications/Atom.app"
 
-alias v="open -a /Applications/MacVim.app"
 
 alias g='git'
 alias y='sudo yarn'
@@ -187,25 +158,6 @@ din() {
 
 alias ds='sudo docker stop $(docker ps -a -q)'
 
-alias ds='docker ps'
-
-alias dc='docker-compose'
-
-alias drm='docker rm'
-
-
-alias ladd='mongoimport --db dev-feathers --collection properties --jsonArray --file '
-alias ladd-d='mongoimport --db dev-feathers --collection properties --drop --jsonArray --file '
-
-
-
-alias sadda='mongoimport --db prod-feathers --collection properties --jsonArray --file'
-alias sadd-da='mongoimport --db prod-feathers --collection properties --drop --jsonArray --file '
-
-
-
-
-
 
 # YOU ALWAYS HAVE TO GIVE AN ARGUMENT AFTER THE MONGO EXPORT COMMAND FOR THE FILE NAME YOU WANT IT TO BE USED.
 
@@ -229,25 +181,6 @@ alias cpd='cap production deploy'
 alias gu='sudo gulp'
 
 alias mkd='sudo mkdir'
-
-
-alias server='cd /Users/jay/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG'
-
-
-
-alias ec='ssh ubuntu@34.233.92.22'
-
-
-
-alias ef='ssh  ubuntu@34.228.129.12'
-
-alias efc='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"comps.pem" ubuntu@ec2-174-129-17-255.compute-1.amazonaws.com'
-
-
-alias ew='ssh ubuntu@34.225.142.219'
-
-# old
-
 
 
 alias ecm='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"ltg5.pem" ubuntu@ec2-54-157-254-96.compute-1.amazonaws.com'
@@ -343,18 +276,6 @@ export GOPATH=$HOME/go
 alias cpd='cap production deploy'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-
-
-# check later
-
-#alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
-#alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
-#alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
-
-#
-#
-
 
 export PATH="$HOME/.fastlane/bin:$PATH"
 
