@@ -1,36 +1,158 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-alias ..="cd .."
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
 
-#NETGEAR
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# https://github.com/paulirish/dotfiles/blob/master/.aliases
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-alias fs="stat -f \"%z bytes\""
 
-function fixSSH(){
-  eval $(ssh-agent);
-  ssh-add ~/.ssh/id_rsa
+# Function definitions to fix "command not found" errors
+
+# 1. Shows abbreviated path (~ for home)
+function collapse_pwd {
+    echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
-# END
+# 2. Shows Python virtual environment name
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
 
+# 3. Shows battery charge (Requires BAT_CHARGE variable, otherwise may fail)
+# Note: This function often relies on a macOS tool or variable that might not be set.
+function battery_charge {
+    # If the BAT_CHARGE variable is set (e.g., by a separate script), use it.
+    # Otherwise, you might need a dedicated macOS script for battery info.
+    # We will keep the original implementation but note it might not display anything.
+    echo `$BAT_CHARGE` 2>/dev/null
+}
+
+# 4. Defines the prompt character based on VCS status (needed for your PROMPT definition)
+function prompt_char {
+    git branch >/dev/null 2>/dev/null && echo '±' && return
+    hg root >/dev/null 2>/dev/null && echo '☿' && return
+    echo '○'
+}
+
+# Function for Mercurial (HG) prompt info (already provided, but included for completeness)
+function hg_prompt_info {
+    hg prompt --angle-brackets "\
+< on %{$fg[magenta]%}<branch>%{$reset_color%}>\
+< at %{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\
+%{$fg[green]%}<status|modified|unknown><update>%{$reset_color%}<
+patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
+}
+
+# --- PROMPT DEFINITION (Place this AFTER the functions) ---
+
+PROMPT='
+%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
+$(virtualenv_info)$(prompt_char) '
+
+RPROMPT='$(battery_charge)'
+
+
+
+alias ..="cd .."
 
 
 alias et="sudo rm -ri ~/.Trash"
@@ -51,16 +173,6 @@ alias acm='git add -A && git commit -m'
 # alias ac="git add . && c -m' - '"
 
 alias ac="git add . && c --no-verify -m' - '"
-
-function acp() {
-    git add .
-    git commit -a -m "$1"
-    git push
-}
-
-#alias acc '!git add -A && git commit'
-#alias acc 'git add -A && git commit'
-
 
 
 alias dr="git push origin --delete"
@@ -163,13 +275,6 @@ alias ds='sudo docker stop $(docker ps -a -q)'
 
 # alias lrem='db.properties.remove({})'
 
-alias sadd='mongoimport --db dev-feathers --collection properties --jsonArray --file '
-alias sadd-d='mongoimport --db dev-feathers --collection properties --drop --jsonArray --file '
-
-
-alias lexp='mongoexport --jsonArray --db dev-feathers --collection properties  --out '
-alias lexu='mongoexport --jsonArray --db dev-feathers --collection users  --out'
-alias lexui='mongoexport --jsonArray --db dev-feathers --collection userinfos  --out'
 
 alias py='python -m SimpleHTTPServer'
 alias kpy='kill %1'
@@ -183,99 +288,6 @@ alias gu='sudo gulp'
 alias mkd='sudo mkdir'
 
 
-alias ecm='sudo ssh -i ~/Dropbox/Life_Changing_Mentoring_Program/CODE/Server-LTG/"ltg5.pem" ubuntu@ec2-54-157-254-96.compute-1.amazonaws.com'
+# alias gostart=  // put here for go start commands. 
 
-#old end
-
-
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
-
-#theme #theme #theme #theme  #theme #theme #theme #theme
-
-function collapse_pwd {
-    echo $(pwd | sed -e "s,^$HOME,~,")
-}
-
-function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
-}
-
-function battery_charge {
-    echo `$BAT_CHARGE` 2>/dev/null
-}
-
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
-
-function hg_prompt_info {
-    hg prompt --angle-brackets "\
-< on %{$fg[magenta]%}<branch>%{$reset_color%}>\
-< at %{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\
-%{$fg[green]%}<status|modified|unknown><update>%{$reset_color%}<
-patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
-}
-
-PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
-$(virtualenv_info)$(prompt_char) '
-
-RPROMPT='$(battery_charge)'
-
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-
-
-function mkcd () { sudo mkdir -p "$@" && eval cd "\"\$$#\""; }
-
-function rm () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-
-export GOPATH=$HOME/go
-
-alias cpd='cap production deploy'
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-export PATH="$HOME/.fastlane/bin:$PATH"
 
