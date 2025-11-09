@@ -175,6 +175,11 @@ alias acm='git add -A && git commit -m'
 alias ac="git add . && c --no-verify -m' - '"
 
 
+alias am="git commit --amend"
+alias gpa="git push --all origin"
+alias gpo="git push --all origin"
+
+
 alias dr="git push origin --delete"
 alias dl="git branch -D"
 
@@ -197,11 +202,14 @@ alias ocns="oc  --args --disable-web-security"
 
 alias occns="occ  --args --disable-web-security"
 
-alias v="open -a MacVim.app"
 
 alias sub="open -a /Applications/Sublime\ Text.app/"
 
-alias vs="open -a /Applications/Visual\ Studio\ Code.app"
+alias vs="open -a /Applications/Visual\ Studio\ Code\ 2.app"
+
+alias tmate="open -a /Applications/TextMate.app"
+
+alias gd='git diff'
 
 alias bra="open -a /Applications/Brackets.app"
 
@@ -230,7 +238,7 @@ alias gl='git pull'
 alias gp='git push origin'
 # alias gpa='git push --all origin'
 alias gpd='git push -u origin dev-2'
-alias gd='git diff | mate'
+# alias gd='git diff'
 alias a='git add --all'
 alias au='git add -u'
 alias gau='git add --update'
@@ -289,5 +297,15 @@ alias mkd='sudo mkdir'
 
 
 # alias gostart=  // put here for go start commands. 
+
+
+
+# alias bp='serverless deploy --aws-profile default'
+
+alias bp='GOOS=linux GOARCH=amd64 go build -o bootstrap main.go && serverless deploy --aws-profile jay'
+
+alias bl='aws logs tail /aws/lambda/birdy-lambda-dev-app --follow'
+alias bl5='aws logs tail /aws/lambda/birdy-lambda-dev-app --since 5m --follow'
+
 
 
