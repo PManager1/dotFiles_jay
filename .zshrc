@@ -175,7 +175,13 @@ alias acm='git add -A && git commit -m'
 alias ac="git add . && c --no-verify -m' - '"
 
 
-alias am="git commit --amend"
+# alias am="git commit --amend"
+
+# Alias to add all changes and amend the last commit without editing the message
+# Corrected Line 181
+alias am='git add . && git commit --amend --no-edit'
+
+
 alias gpa="git push --all origin"
 alias gpo="git push --all origin"
 
@@ -211,6 +217,7 @@ alias tmate="open -a /Applications/TextMate.app"
 
 alias gd='git diff'
 
+
 alias bra="open -a /Applications/Brackets.app"
 
 alias at="open -a /Applications/Atom.app"
@@ -234,8 +241,11 @@ alias st='git status'
 alias ch='cherry-pick'
 
 alias s='git status -uno'
+# alias s='git status'
 alias gl='git pull'
 alias gp='git push origin'
+alias gpo='git push origin main'
+
 # alias gpa='git push --all origin'
 alias gpd='git push -u origin dev-2'
 # alias gd='git diff'
@@ -306,6 +316,7 @@ alias bp='GOOS=linux GOARCH=amd64 go build -o bootstrap main.go && serverless de
 
 alias bl='aws logs tail /aws/lambda/birdy-lambda-dev-app --follow'
 alias bl5='aws logs tail /aws/lambda/birdy-lambda-dev-app --since 5m --follow'
+
 
 
 
